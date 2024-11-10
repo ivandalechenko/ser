@@ -3,7 +3,7 @@
 
 .content {
     width: 100%;
-    height: 100dvh;
+    min-height: 100dvh;
     background: url('/img/bg.jpg');
     background-size: cover;
     background-position: center;
@@ -15,8 +15,28 @@
     .header,
     .footer {
         width: 100%;
-        height: 100px;
-        background-color: red;
+        // height: 100px;
+        // background-color: red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        @media(max-width: 800px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .link {
+        font-size: 62px;
+        text-shadow: 4.00px 0.00px #ffffff, 3.70px 1.53px #ffffff, 2.83px 2.83px #ffffff, 1.53px 3.70px #ffffff, 0.00px 4.00px #ffffff, -1.53px 3.70px #ffffff, -2.83px 2.83px #ffffff, -3.70px 1.53px #ffffff, -4.00px 0.00px #ffffff, -3.70px -1.53px #ffffff, -2.83px -2.83px #ffffff, -1.53px -3.70px #ffffff, -0.00px -4.00px #ffffff, 1.53px -3.70px #ffffff, 2.83px -2.83px #ffffff, 3.70px -1.53px #ffffff;
+
+        @media(max-width: 800px) {
+            width: 100%;
+            text-align: center;
+        }
     }
 
     .img {
@@ -25,8 +45,24 @@
         justify-content: center;
         align-items: center;
 
+        &_mob {
+            display: none;
+
+            @media(max-width: 600px) {
+                display: block;
+            }
+        }
+
+        &_pc {
+            display: block;
+
+            @media(max-width: 600px) {
+                display: none;
+            }
+        }
+
         img {
-            width: 100%;
+            width: 90%;
             max-width: 1000px;
             max-height: 60vh;
             object-fit: contain;

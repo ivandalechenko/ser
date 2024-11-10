@@ -1,4 +1,3 @@
-
 name: Backend deployment to server
 
 on:
@@ -11,10 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Define deployment variables
-        run: |
-            echo "TARGET_DIR=/home/ser" >> $GITHUB_ENV
-
       - name: Deployment
         id: deploy
         uses: appleboy/ssh-action@master
@@ -28,7 +23,7 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             
-            cd ${{ env.TARGET_DIR }}
+            cd /home/ser
             
             echo "Pulling the latest code from the repository"
             git pull
